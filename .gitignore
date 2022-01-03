@@ -2,5 +2,5 @@
 .idea/
 
 #virtual environment
-/venv/
+venv/
 
