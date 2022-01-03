@@ -31,6 +31,14 @@ class Blockchain(object):
         :return: <int> The index of the Block that will hold this transaction
         """
 
+        block = {
+            'index': len(self.chain) + 1,
+            'timestamp': time(),
+            'transactions': self.current_transactions,
+            'proof': proof,
+            'previous_hash': previous_hash or self.hash(self.chain[-1]),
+        }
+
         self.current_transactions.append({
             'sender': sender,
             'recipient': recipient,
